@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="toDoList" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZACH-PC\SQLEXPRESS;Initial Catalog=toDoList;Integrated Security=True" SettingsObjectName="toDoList.Properties.Settings" SettingsPropertyName="toDoListConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.toDo" Member="toDos">
+    <Type Name="toDo">
+      <Column Name="task" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isComplete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="importance" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

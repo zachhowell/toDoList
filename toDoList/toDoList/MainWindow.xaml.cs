@@ -18,11 +18,21 @@ namespace toDoList
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+   
     public partial class MainWindow : Window
     {
+       DataClasses1DataContext dc = new DataClasses1DataContext(
+       Properties.Settings.Default.toDoListConnectionString);
+
         public MainWindow()
         {
             InitializeComponent();
+            if (dc.DatabaseExists()) toDo.ItemsSource = dc.toDos;
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            dc.SubmitChanges();
         }
     }
 }
